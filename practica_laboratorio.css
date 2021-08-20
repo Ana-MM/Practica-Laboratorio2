@@ -1,0 +1,65 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.titulo {
+    font-size: 30px;
+    color:blue;
+    text-align: center;
+    text-shadow: 3px 3px 3px yellow;
+}
+form {
+    width: 100%;
+}
+label {
+    font-size: 20px;
+    display: inline;
+    width: 100%;
+}
+input {
+    background:yellow;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+input[type="date"] {
+    background: white ;
+}
+input:focus {
+    border: 2px solid #4fb4f7;
+}
+input[type="submit"] {
+    background: #75747433;
+    border: 1px solid gray;
+    border-radius: 0%;
+}
+input[type="submit"]:hover {
+    border:2px solid #1175f8;
+}
+input[type="reset"] {
+    background: #75747433;
+    border: 1px solid gray;
+    border-radius: 0%;
+}
+input[type="reset"]:hover {
+    border:2px solid #1175f8;
+}
+fieldset {
+    background:cyan;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+legend {
+    color: white;
+    background: red;
+}
+button {
+    margin: 0px;
+    padding: 0px 20px;
+    background: #ffbcb4;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+button:hover {
+    border: 2px solid salmon;
+}

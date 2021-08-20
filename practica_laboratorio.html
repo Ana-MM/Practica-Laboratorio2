@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="practica_laboratorio.css" type="text/css"/>
+    <title>Laboratorio Final</title>
+    </head>
+        <body>
+            <header>
+                <div class="titulo">
+                    <h1>Formulario Información Alta Telefónica</h1>
+                </div>
+            </header>
+                <form class="telefonica" action="./ProcesarFormulario.php" name="telefonica" method="POST">  
+                    <div class="contenedor">
+                    <fieldset id="datos">
+                        <legend>Datos Personales</legend>
+
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" maxlength="30"/><br/>
+                        
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" id="apellidos" maxlength="60"/><br/>
+                        
+                        <label for="direccion">Dirección:</label>
+                        <input type="text" id="direccion" maxlength="60"/><br/>
+                        
+                        <label for="cpostal">Codigo Postal:</label>
+                        <input type="text" id="cpostal" pattern="[0-9]{5}" maxlength="5"/><br/>
+                        
+                        <label for="localidad">Localidad:</label>
+                        <input type="text" id="localidad"/><br/>
+                    </fieldset>
+                        <br/>
+                    <fieldset id="tipocontratacion">
+                        <legend>Tipo de Contratación</legend>
+                        <label>
+                            <input type="radio" name="tipoc" value="nuevo" id="nuevac" checked="checked">Nueva Contratación &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoc" value="porta" id="portabilidad">Portabilidad &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <label>
+                            <input type="radio" name="tipoc" value="cambio" id="cambioc">Cambio de Contrato &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <br/>
+                        <br/>
+                        <label>Elija la compañía actual:</label>
+                        <select name="origen">   
+                            <label>
+                                <option name="compañia" value="movistar" id="movistar">Movistar</option>
+                            </label>
+                            <label>
+                                <option name="compañia" value="orange" id="orange">Orange</option>
+                            </label>
+                            <label>
+                                <option name="compañia" value="vodafone" id="vodafone">Vodafone</option>
+                            </label>
+                            <label>
+                                <option name="compañia" value="yoigo" id="yoigo">Yoigo</option>
+                            </label>
+                            <label>
+                                <option name="compañia" value="ninguna" id="ninguna">No tengo ninguna compañía</option>
+                            </label>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <label>En caso de portabilidad, elija la nueva compañía:</label>
+                        <select name="destino">
+                            <label>
+                                <option name="compañia" value="movistar" id="movista">Movistar</option>
+                            </label>
+                            <label
+                            ><option name="compañia" value="orange" id="orang">Orange</option>
+                        </label>
+                            <label>
+                                <option name="compañia" value="vodafone" id="vodafon">Vodafone</option>
+                            </label>
+                            <label>
+                                <option name="compañia" value="yoigo" id="yoig">Yoigo</option>
+                            </label>
+                        </select>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </fieldset>
+                        <br/>
+                    <fieldset id="datosbancarios">
+                        <legend>Datos Bancarios</legend>
+                            <label>País:</label>
+                                <input type="text" name="pais" value="ES" readonly="readonly" id="pais"/> (sólo válido ES)<br/>
+                            <label>Control IBAN:</label>
+                                <input type="text" name="iban" placeholder="XX" pattern="[0-9]{2}" maxlength="2" id="iban"/> (dos dígitos)<br/>
+                            <label>Entidad:</label>
+                                <input type="text" name="enti" placeholder="XXXX" pattern="[0-9]{4}" maxlength="4" id="entidad"/> (cuatro dígitos)<br/>
+                            <label>Sucursal:</label>
+                                <input type="text" name="suc" placeholder="XXXX" pattern="[0-9]{4}" maxlength="4" id="sucursal"/> (cuatro dígitos)<br/>
+                            <label>DC:</label>
+                                <input type="text" name="dc" placeholder="XX" pattern="[0-9]{2}" maxlength="2" id="dc"/> (dos dígitos)<br/>
+                            <label>Cuenta:</label>
+                                <input type="text" name="cuenta" placeholder="XXXXXXXXXX" pattern="[0-9]{10}" maxlength="10" id="ncuenta"/> (diez dígitos)<br/>
+                    </fieldset>
+                        <br/>
+                    <fieldset id="encuesta">
+                        <legend>Datos Estadísticos - ¿Cómo nos conoció?</legend>
+                        <input type="checkbox" name="encuesta" id="tv">A través de la TV<br/>
+                        <input type="checkbox" name="encuesta" id="radio"/>A través de la radio<br/>
+                        <input type="checkbox" name="encuesta" id="internet"/>A través de la Internet<br/>
+                        <input type="checkbox" name="encuesta" id="otros"/>Otros<br/>
+                        <input type="range" id="valoracion1a5" min="1" max="5"/>Valoración [1-5]<br/>
+                        <br/>
+                        Fecha de la Encuesta:&nbsp;<input type="date" value="2019-01-01" id="fecha"/>&nbsp;Valoración[1-5]
+                    </fieldset>
+                        <br/>
+                        <input type="submit" name="Enviar Datos" id="Enviar_Datos" value="Enviar Datos"/>
+                        <input type="reset" name="Borrar Datos" id="Borrar_Datos" value="Borrar Datos"/>
+                        <br/><br/>
+                    </form>
+                        <button onclick="mostrarValoracion();"> Mostrar <br/>Valoración </button>
+                        <button onclick="mostrarCuenta();" id="cuenta"> Mostrar <br/>Cuenta </button>
+                        <button onclick="mostrarDia();" id="dia"> Mostrar Dia <br/>Semana </button>
+                    <script src="practica_laboratorio.js"></script>
+        </body>
+</html>
